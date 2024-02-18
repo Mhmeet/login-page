@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="rightside">
+        <h2>Hello</h2>
+        <h4>Welcome to our family. We will enjoy much!</h4>
+        <form [formGroup]="registerForm" class="field-form">
+           
+            <div class="name-surname" >
+                <mat-form-field class="example-full-width me-1">
+                    <mat-label>Name</mat-label>
+                    <input type="text" matInput formControlName="name" placeholder="Ali">
+                    @if(getFormNameInValid('name')){
+                        <mat-error>
+                            {{getErrorMessage('name')}}
+                        </mat-error>
+                    }
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Surname</mat-label>
+                    <input type="text" matInput formControlName="surname" placeholder="Veli">
+                    @if(getFormNameInValid('surname')){
+                        <mat-error>
+                            {{getErrorMessage('surname')}}
+                        </mat-error>
+                    }
+                </mat-form-field>
+            </div>
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="mail" placeholder="Ex. pat@example.com">
+                @if(getFormNameInValid('mail')){
+                    <mat-error>
+                        {{getErrorMessage('mail')}}
+                    </mat-error>
+                } 
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input type="pas" matInput formControlName="password" placeholder="Password">
+                @if(getFormNameInValid('password')){
+                    <mat-error>
+                        {{getErrorMessage('password')}}
+                    </mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Password Again</mat-label>
+                <input type="pas" matInput formControlName="passwordRep" placeholder="RepeatPassword">
+                @if(getFormNameInValid('passwordRep')){
+                    <mat-error>
+                        {{getErrorMessage('passwordRep')}}
+                    </mat-error>
+                }
+            </mat-form-field>
+           
+            
+            <button mat-raised-button color="primary" (click)="register()" class="" [disabled]="isDiasbleForFormGroup()">Register</button>
+        </form>
+
+    </div>
+    <div class="leftside">
+    </div>
+</div>
